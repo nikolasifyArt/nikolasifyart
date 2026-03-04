@@ -1,6 +1,6 @@
 # Codepack - Project Knowledge Base
 
-Last Updated: 2026-03-04 19:38
+Last Updated: 2026-03-04 19:41
 Agent Runtime: chatgpt.com GPT-5.2 Agent Mode
 Lead Agent Role: project direction, implementation planning, and execution tracking
 
@@ -32,6 +32,7 @@ Current Step: completed
 - 2026-03-04: Added Netlify publish/redirect config and deployment documentation (files: `netlify.toml`, `README.md`).
 - 2026-03-04: Generated placeholder visual assets for logo and social preview (files: `assets/logo.png`, `assets/og-image.png`).
 - 2026-03-04: Committed initial landing page release and pushed `main` to GitHub after merging pre-existing remote `main` history (files: `.git` history state).
+- 2026-03-04: Added an explicit Uses section and navigation link to satisfy direct “uses” content requirement (files: `index.html`).
 
 ## Rulebook Changes
 
@@ -47,6 +48,7 @@ Current Step: completed
 | 2026-03-04 | PowerShell `System.Drawing` asset generation script | Assets pipeline | pass | `assets/logo.png` and `assets/og-image.png` generated successfully. |
 | 2026-03-04 | `git add .; git commit -m "feat: initial Codepack landing page"; git push -u origin main` | Release publish | fail | Commit succeeded, push rejected (remote had existing commits). |
 | 2026-03-04 | `git fetch origin; git merge origin/main --allow-unrelated-histories -X ours -m "chore: merge remote main history"; git push -u origin main` | Publish conflict resolution | pass | Remote history merged and push completed; upstream tracking configured. |
+| 2026-03-04 | `rg -n "#uses|>Uses<|Prompt context prep|CI quality gates|Large refactor planning" index.html` | Requirement validation | pass | Uses nav anchor and dedicated Uses content section confirmed. |
 
 ## Risks and Blockers
 
