@@ -1,27 +1,28 @@
 # Codepack - Project Knowledge Base
 
-Last Updated: 2026-03-04 19:41
+Last Updated: 2026-03-04 20:30
 Agent Runtime: chatgpt.com GPT-5.2 Agent Mode
 Lead Agent Role: project direction, implementation planning, and execution tracking
 
 ## Project Snapshot
 
 - Phase: Initial website bootstrap in a new dedicated repository.
-- Current Objective: Deliver a Netlify-ready one-page Codepack marketing site with required sections, CTAs, and metadata.
+- Current Objective: Maintain and polish the Codepack landing page UI before/while deploying on Netlify.
 - Stable Guarantees: Static HTML/CSS/JS only, no build step, mobile-first responsive layout, required contact links included.
-- Current Focus: Repository is pushed and ready for Netlify site connection and domain configuration.
+- Current Focus: Install button visual artifact removed; ready for browser verification and deployment flow continuation.
 
 ## Prompt Ledger
 
 | Date | Prompt Summary | Area | Action Summary | Status |
 | --- | --- | --- | --- | --- |
 | 2026-03-04 | Build/deploy-ready Codepack landing page in new repo with Netlify config and push to GitHub | Docs/Tooling | Initialized repo/remote, built full static landing page, committed, merged remote history, and pushed to `origin/main` | done |
+| 2026-03-04 | Fix weird cube shown inside Install button on landing page screenshot | UI/CSS | Located pseudo-element source in `.btn-install::before`, removed it, and validated selector cleanup | done |
 
 ## Active Plan
 
-1. [x] Initialize a new repository and configure `origin` remote.
-2. [x] Implement required single-page site content, styling, scripts, SEO metadata, and Netlify config.
-3. [x] Commit and push to GitHub main branch.
+1. [x] Identify the CSS source of the cube artifact on the Install button.
+2. [x] Remove the pseudo-element causing the artifact.
+3. [x] Validate the selector removal and working tree status.
 
 Current Step: completed
 
@@ -33,10 +34,12 @@ Current Step: completed
 - 2026-03-04: Generated placeholder visual assets for logo and social preview (files: `assets/logo.png`, `assets/og-image.png`).
 - 2026-03-04: Committed initial landing page release and pushed `main` to GitHub after merging pre-existing remote `main` history (files: `.git` history state).
 - 2026-03-04: Added an explicit Uses section and navigation link to satisfy direct “uses” content requirement (files: `index.html`).
+- 2026-03-04: Removed `.btn-install::before` decorative square to fix the weird cube artifact inside the Install button (files: `styles.css`).
 
 ## Rulebook Changes
 
 - 2026-03-04: No project rulebook changes were introduced in this turn.
+- 2026-03-04: No project rulebook changes were introduced for UI artifact fix turn.
 
 ## Test Results
 
@@ -49,6 +52,7 @@ Current Step: completed
 | 2026-03-04 | `git add .; git commit -m "feat: initial Codepack landing page"; git push -u origin main` | Release publish | fail | Commit succeeded, push rejected (remote had existing commits). |
 | 2026-03-04 | `git fetch origin; git merge origin/main --allow-unrelated-histories -X ours -m "chore: merge remote main history"; git push -u origin main` | Publish conflict resolution | pass | Remote history merged and push completed; upstream tracking configured. |
 | 2026-03-04 | `rg -n "#uses|>Uses<|Prompt context prep|CI quality gates|Large refactor planning" index.html` | Requirement validation | pass | Uses nav anchor and dedicated Uses content section confirmed. |
+| 2026-03-04 | `rg -n "btn-install::before|\\.btn-install\\s*\\{" styles.css` | UI artifact validation | pass | `.btn-install` exists and `::before` artifact selector no longer exists. |
 
 ## Risks and Blockers
 
@@ -56,9 +60,9 @@ Current Step: completed
 
 ## Next Steps (Agent-Driven)
 
-1. Connect repository in Netlify and confirm publish directory `.` with no build command.
-2. Add custom domain `nikolasifyart.com` in Netlify domain management.
-3. Complete DNS configuration (Netlify nameservers or required A/CNAME records).
+1. Preview `index.html` and confirm the Install button renders cleanly on desktop and mobile.
+2. Optionally replace the removed decorative shape with an intentional official icon asset later.
+3. Continue Netlify connect plus `nikolasifyart.com` DNS configuration.
 
 ## Open Questions
 
