@@ -17,7 +17,7 @@ Single-page static marketing site for the Codepack VS Code extension.
 - Or run:
 
 ```bash
-npx serve .
+py -m http.server 8000
 ```
 
 ## Netlify Setup
@@ -25,7 +25,7 @@ npx serve .
 1. Connect this GitHub repo in Netlify.
 2. Build command: none.
 3. Publish directory: `.`.
-4. Netlify will use `netlify.toml` redirect settings automatically.
+4. Direct routes are folder-based static pages, including `/terms-and-conditions/` and `/terms-of-service/`, so no SPA rewrite should be configured.
 
 ## Domain Setup (`nikolasifyart.com`)
 
@@ -39,3 +39,5 @@ npx serve .
 
 - Premium checkout link currently routes to `#contact`.
 - Contact email for premium purchase: `nikolasify@nikolasifyart.com`.
+- Legal pages live at `/terms-and-conditions/` and `/terms-of-service/`.
+- Future commercial plans may add Pro and Business/Enterprise tiers; one-time Premium purchasers remain grandfathered for Premium access and receive discounted future Pro pricing when offered.
